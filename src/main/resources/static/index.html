@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>my document</title>
+  <style>
+    .errorMessage {
+      color: red;
+      display: none;
+    }
+
+    label, input {
+      display: table-cell;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th, td {
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+<h1>Bestilling av kinobiletter</h1>
+
+<label>Velg film:</label>
+<select id="getFilm" required>
+  <option value="" disabled selected>Velg film</option>
+  <option value="Lord of the rings">Lord of the Rings</option>
+  <option value="The Godfather">The Godfather</option>
+  <option value="Interstellar">Interstellar</option>
+  <option value="Shawshank redemption">Shawshank Redemption</option>
+  <option value="Forrest gump">Forrest Gump</option>
+  <option value="Fight Club">Fight Club</option>
+  <option value="Pulp Fiction">Pulp Fiction</option>
+</select>
+<label id="errorFilm" class="errorMessage">Må velge film</label><br><br>
+<div class ="container">
+  <label>Antall</label>
+  <input id="getAntall" min="1" max="99" style="width: 2ch;" required>
+  <label id="errorAntall" class="errorMessage">Må skrive noe inn i antall</label><br><br>
+
+  <label>Fornavn</label>
+  <input id ="getFornavn" required>
+  <label id="errorFornavn" class="errorMessage">Må skrive noe inn i fornavnet</label><br><br>
+
+  <label>Etternavn</label>
+  <input id ="getEtternavn" required>
+  <label id="errorEtternavn" class="errorMessage">Må skrive noe inn i etternavnet</label><br><br>
+
+  <label>Telefonnr</label>
+  <input id ="getTlf" required>
+  <label id="errorTlf" class="errorMessage">Må skrive noe inn i telefonnr</label><br><br>
+
+  <label>Epost</label>
+  <input id ="getEpost" required>
+  <label id="errorEpost" class="errorMessage">Må skrive noe inn i epost</label><br><br>
+
+  <button onclick="kjøpBillett()">Kjøp billett</button>
+</div><br>
+
+<h2>Alle billetter</h2>
+<table id="billetterListe">
+</table>
+<button onclick="slettAlt()">Slett alle billetter</button><br><br>
+<script src="index.js"></script>
+</body>
+</html>
