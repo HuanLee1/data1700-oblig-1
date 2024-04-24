@@ -18,7 +18,6 @@ public class billett {
         this.telefon = telefon;
         this.epost = epost;
     }
-
     public billett(){}
 
     public int getId(){return id;}
