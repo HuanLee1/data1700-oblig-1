@@ -3,70 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>my document</title>
-  <style>
-    .errorMessage {
-      color: red;
-      display: none;
-    }
-
-    label, input {
-      display: table-cell;
-    }
-
-    table {
-      width: 100%;
-    }
-
-    th, td {
-      text-align: center;
-    }
-
-  </style>
+  <title>Bestilling av kinobilletter</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<h1>Bestilling av kinobiletter</h1>
 
-<label>Velg film:</label>
-<select id="getFilm" required>
-  <option value="" disabled selected>Velg film</option>
-  <option value="Lord of the rings">Lord of the Rings</option>
-  <option value="The Godfather">The Godfather</option>
-  <option value="Interstellar">Interstellar</option>
-  <option value="Shawshank redemption">Shawshank Redemption</option>
-  <option value="Forrest gump">Forrest Gump</option>
-  <option value="Fight Club">Fight Club</option>
-  <option value="Pulp Fiction">Pulp Fiction</option>
-</select>
-<label id="errorFilm" class="errorMessage">Må velge film</label><br><br>
-<div class ="container">
-  <label>Antall</label>
-  <input id="getAntall" min="1" max="99" style="width: 2ch;" required>
-  <label id="errorAntall" class="errorMessage">Må skrive noe inn i antall</label><br><br>
+<div class="container py-5">
+  <form class="form">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <h1>Bestilling av kinobiletter</h1>
 
-  <label>Fornavn</label>
-  <input id ="getFornavn" required>
-  <label id="errorFornavn" class="errorMessage">Må skrive noe inn i fornavnet</label><br><br>
+        <select class="form-select mt-4 mb-4" id="getFilm">
+          <option value="" disabled selected>Velg film:</option>
+          <option value="Lord of the rings">Lord of the Rings</option>
+          <option value="The Godfather">The Godfather</option>
+          <option value="Interstellar">Interstellar</option>
+          <option value="Shawshank redemption">Shawshank Redemption</option>
+          <option value="Forrest gump">Forrest Gump</option>
+          <option value="Fight Club">Fight Club</option>
+          <option value="Pulp Fiction">Pulp Fiction</option>
+        </select>
 
-  <label>Etternavn</label>
-  <input id ="getEtternavn" required>
-  <label id="errorEtternavn" class="errorMessage">Må skrive noe inn i etternavnet</label><br><br>
+        <div class="form-group mb-4">
+          <label for="getAntall">Antall billetter:</label>
+          <input id ="getAntall" class="form-control" style="width: 45px;">
+        </div>
 
-  <label>Telefonnr</label>
-  <input id ="getTlf" required>
-  <label id="errorTlf" class="errorMessage">Må skrive noe inn i telefonnr</label><br><br>
+        <div class="form-group mb-2">
+          <label for="getFornavn">Fornavn:</label>
+          <input id="getFornavn" class="form-control">
+        </div>
 
-  <label>Epost</label>
-  <input id ="getEpost" required>
-  <label id="errorEpost" class="errorMessage">Må skrive noe inn i epost</label><br><br>
+        <div class="form-group mb-2">
+          <label for="getEtternavn">Etternavn:</label>
+          <input id="getEtternavn" class="form-control">
+        </div>
 
-  <button onclick="kjøpBillett()">Kjøp billett</button>
-</div><br>
+        <div class="form-group mb-2">
+          <label for="getTlf">Telefon:</label>
+          <input id="getTlf" class="form-control">
+        </div>
 
-<h2>Alle billetter</h2>
-<table id="billetterListe">
-</table>
-<button onclick="slettAlt()">Slett alle billetter</button><br><br>
+        <div class="form-group mb-4">
+          <label for="getEpost">E-post:</label>
+          <input id="getEpost" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-primary" onclick="kjopBillett()">Kjøp billett</button>
+        </div>
+
+      </div>
+
+      <div class="col-md-6 mt-3">
+        <h1>Alle billetter</h1>
+
+        <div class="form-group">
+          <div id="billettListe"></div>
+          <button class="btn btn-danger" onclick="slettAlt()">Slett alle billetter</button>
+        </div>
+
+      </div>
+
+    </div>
+  </form>
+</div>
+
 <script src="index.js"></script>
+
 </body>
 </html>
