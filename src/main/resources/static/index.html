@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bestilling av kinobilletter</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
@@ -12,10 +12,10 @@
 <div class="container py-5">
   <form class="form">
     <div class="row">
-      <div class="col-md-6 mb-3">
+      <div class="col-md-4 mb-3">
         <h1>Bestilling av kinobiletter</h1>
 
-        <select class="form-select mt-4 mb-4" id="getFilm">
+        <select class="form-select mt-4 mb-4" id="inputFilm">
           <option value="" disabled selected>Velg film:</option>
           <option value="Lord of the rings">Lord of the Rings</option>
           <option value="The Godfather">The Godfather</option>
@@ -26,43 +26,43 @@
           <option value="Pulp Fiction">Pulp Fiction</option>
         </select>
 
+        <div class="form-group mb-4 col-md-3">
+          <label for="inputAntall">Antall billetter:</label>
+          <input id ="inputAntall" class="form-control" type="number" >
+        </div>
+
+        <div class="form-group mb-2 has-validation">
+          <label for="inputFornavn">Fornavn:</label>
+          <input id="inputFornavn" class="form-control" type="text">
+        </div>
+
+        <div class="form-group mb-2">
+          <label for="inputEtternavn">Etternavn:</label>
+          <input id="inputEtternavn" class="form-control" type="text">
+        </div>
+
+        <div class="form-group mb-2">
+          <label for="inputTlf">Telefon:</label>
+          <input id="inputTlf" class="form-control" type="tel">
+        </div>
+
         <div class="form-group mb-4">
-          <label for="getAntall">Antall billetter:</label>
-          <input id ="getAntall" class="form-control" style="width: 45px;">
-        </div>
-
-        <div class="form-group mb-2">
-          <label for="getFornavn">Fornavn:</label>
-          <input id="getFornavn" class="form-control">
-        </div>
-
-        <div class="form-group mb-2">
-          <label for="getEtternavn">Etternavn:</label>
-          <input id="getEtternavn" class="form-control">
-        </div>
-
-        <div class="form-group mb-2">
-          <label for="getTlf">Telefon:</label>
-          <input id="getTlf" class="form-control">
-        </div>
-
-        <div class="form-group mb-4">
-          <label for="getEpost">E-post:</label>
-          <input id="getEpost" class="form-control">
+          <label for="inputEpost">E-post:</label>
+          <input id="inputEpost" class="form-control" type="email">
         </div>
 
         <div class="form-group">
-          <button class="btn btn-primary" onclick="kjopBillett()">Kjøp billett</button>
+          <button class="btn btn-primary" type ="button" onclick="kjopBillett()">Kjøp billett</button>
         </div>
 
       </div>
 
-      <div class="col-md-6 mt-3">
+      <div class="col-md-8 mt-3">
         <h1>Alle billetter</h1>
 
         <div class="form-group">
           <div id="billettListe"></div>
-          <button class="btn btn-danger" onclick="slettAlt()">Slett alle billetter</button>
+          <button class="btn btn-danger" type ="button" onclick="slettAlt()">Slett alle billetter</button>
         </div>
 
       </div>

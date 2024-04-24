@@ -9,14 +9,14 @@ import java.util.List;
 
 @RestController
 public class kinoController {
-    private final List<billett> alleBilletter = new ArrayList<>();
+    public final List<billett> alleBilletter = new ArrayList<>();
 
     @PostMapping("/lagreBillett")
-    public void lagreBillett(billett innBillett){
+    public void lagreBilletter(billett innBillett){
         alleBilletter.add(innBillett);
     }
 
-    @GetMapping("/hentBilletter")
+    @GetMapping("/hentBillett")
     public List<billett> hentBilletter(){
         return alleBilletter;
     }
