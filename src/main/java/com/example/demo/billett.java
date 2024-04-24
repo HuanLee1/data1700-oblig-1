@@ -1,6 +1,7 @@
 package com.example.demo;
 
 public class billett {
+    private int id;
     private String film;
     private int antall;
     private String fornavn;
@@ -8,7 +9,8 @@ public class billett {
     private int telefon;
     private String epost;
 
-    public billett(String film, int antall, String fornavn, String etternavn, int telefon, String epost){
+    public billett(int id, String film, int antall, String fornavn, String etternavn, int telefon, String epost){
+        this.id = id;
         this.film = film;
         this.antall = antall;
         this.fornavn = fornavn;
@@ -19,6 +21,7 @@ public class billett {
 
     public billett(){}
 
+    public int getId(){return id;}
     public String getFilm(){return film;}
     public int getAntall(){return antall;}
     public String getFornavn(){return fornavn;}
@@ -26,7 +29,7 @@ public class billett {
     public int getTelefon(){return telefon;}
     public String getEpost(){return epost;}
 
-
+    public void setId(int id){this.id = id;}
     public void setFilm(String film){this.film = film;}
     public void setAntall(int antall){this.antall = antall;}
     public void setFornavn(String fornavn){this.fornavn = fornavn;}

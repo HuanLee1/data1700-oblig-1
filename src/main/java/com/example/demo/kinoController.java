@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,21 +10,20 @@ import java.util.List;
 
 @RestController
 public class kinoController {
-    public final List<billett> alleBilletter = new ArrayList<>();
-
+    @Autowired
+    private kinoRepository rep;
     @PostMapping("/lagreBillett")
     public void lagreBilletter(billett innBillett){
-        alleBilletter.add(innBillett);
+        rep.lagreBilletter(innBillett);
     }
 
     @GetMapping("/hentBillett")
     public List<billett> hentBilletter(){
-        return alleBilletter;
+        return rep.hentAlleBilletter();
     }
 
     @GetMapping("/slettBilletter")
     public void slettBillettene(){
-        alleBilletter.clear();
-    }
+        rep.slettAlleBilletter();    }
 
 }
