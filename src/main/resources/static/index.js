@@ -79,8 +79,6 @@ function kjopBillett() {
         $("#inputEpost").removeClass("is-invalid").addClass("is-valid");
     }
 
-
-
     const billett = {
         film: film,
         antall: antall,
@@ -93,6 +91,14 @@ function kjopBillett() {
     $.post("/lagreBillett", billett, function(data) {
         hentBilletter();
     });
+
+    $("#inputFilm").val("").removeClass("is-valid");
+    $("#inputAntall").val("").removeClass("is-valid");
+    $("#inputFornavn").val("").removeClass("is-valid");
+    $("#inputEtternavn").val("").removeClass("is-valid");
+    $("#inputTlf").val("").removeClass("is-valid");
+    $("#inputEpost").val("").removeClass("is-valid");
+
 }
 
 function hentBilletter(){
